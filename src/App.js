@@ -1,12 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer"
+import HomeView from "./Pages/HomeView"
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Switch>
+        <Route exact path="/" component={HomeView}></Route>
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
